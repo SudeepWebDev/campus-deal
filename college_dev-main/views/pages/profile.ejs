@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Deal - The ultimate college marketplace</title>
+
+    <meta name="description"
+        content="Campus Deal is an online marketplace for college students to buy and sell goods and services. Find great deals on textbooks, electronics, and dorm room essentials.">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/dark.css">
+    <script src="https://kit.fontawesome.com/80908bc01a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <!-- logo, navigation menu, and introductory content-->
+        <div class="accessiblity_logo_cont">
+            <!-- <span></span> -->
+            <span id="menu_bar">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </span>
+            <div class="logo">Campus Deal</div>
+            <span id="accessibility" title="accessibility"><i class="fa fa-universal-access fa-2x"
+                    style="float: right;  padding: 10px;" aria-hidden="true"></i>
+                <ul class="accessibility_menu">
+                    <li><a href="#"><i class="fa fa-moon-o btn" title="dark theme" id="theme-toggle"
+                                aria-hidden="true"></i></a></li>
+                                <li>
+                                    <div id="google_translate_element" style="padding: 10px;"></div>
+                                </li>
+                </ul>
+            </span>
+        </div>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart" class="cart-icon"><a href="/cart"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i>
+                        <!-- <span class="cart-count">0</span> -->
+                    </a></li>
+                <!-- <li class="navbar-signin"><a href="/login">Sign In / Sign Up</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <section class="vh-100" style="background-color: #9de2ff;">
+        <h1 style="color:white ; text-align: center;">You are now Logged in as <%= user.first_name%>
+        </h1>
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-md-9 col-lg-7 col-xl-5">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="d-flex text-black">
+                                <div class="flex-shrink-0">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                        alt="Generic placeholder image" class="img-fluid"
+                                        style="width: 180px; border-radius: 10px;">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">
+                                        <%= user.first_name%>
+                                            <%= user.last_name%>
+                                    </h5>
+                                    <p class="mb-2 pb-1" style="color: #2b2a2a;">student</p>
+                                    <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                                        style="background-color: #efefef;">
+                                        <div>
+                                            <p class="small text-muted mb-1">Roll no</p>
+                                            <p class="mb-0">
+                                                <%= user.college_roll_no%>
+                                            </p>
+                                        </div>
+                                        <div class="px-3">
+                                            <p class="small text-muted mb-1">College</p>
+                                            <p class="mb-0">
+                                                <%= user.College%>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p class="small text-muted mb-1">Rating</p>
+                                            <p class="mb-0">8.5</p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="d-flex pt-1">
+                                        <a href="/"><button type="button"
+                                                class="btn btn-outline-primary me-1 flex-grow-1">Home</button></a>
+                                        <a href='/blogs'> <button type="button"
+                                                class="btn btn-primary flex-grow-1">Blog</button></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <footer id="site_footer">
+        <!-- copyright information, links to social media profiles, and other information-->
+
+        <div class="logo">Campus Deal</div>
+        <div class="main_menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                <!-- <li class="navbar-signin active"><a href="/login">Sign In / Sign Up</a></li> -->
+            </ul>
+        </div>
+
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <div class="social-media-container">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f" style="color: #1877f2;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter" style="color: rgb(29, 155, 240);"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram" style="color: magenta;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube" style="color: red;"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-details">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt" style="color: green;"></i> Phone: 123-456-7890</li>
+                    <li><i class="fas fa-envelope" style="color: red;"></i> Email: info@Campus Deal.com</li>
+                </ul>
+            </div>
+        </div>
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <section class="newsletter">
+            <div>
+                <h3>Subscribe to our newsletter</h3>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email...">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <div class="quick-links">
+            <div class="quick-links-container">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+                <a href="#">FAQ</a>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2023 Campus Deal. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/about.js"></script>
+    <script>
+        const menu_bar = document.getElementById('menu_bar');
+        function toggleMenu() {
+            const main_menu = document.querySelector('.main_menu');
+            if (main_menu.style.display === 'block') {
+                main_menu.style.display = 'none';
+            } else {
+                main_menu.style.display = 'block';
+            }
+        }
+        menu_bar.addEventListener('click', toggleMenu);
+    </script>
+    <script src="./js/dark.js"></script>
+</body>
+
+</html>

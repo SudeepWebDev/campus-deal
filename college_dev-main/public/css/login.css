@@ -1,0 +1,434 @@
+/* 
+.sign-dwn-btns {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px 0px 0px;
+   
+  
+  
+  
+  }
+  
+  .sign-dwn-btns button {
+    background: transparent;
+    border: none;
+    margin: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  
+  .sign-dwn-btns button:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+section#register-container-parent,
+section#login-container-parent {
+  background: url(https://images.shiksha.com/mediadata/images/1610359750phpwockaj.png);
+  background-color: rgb(255, 218, 150);
+  background-size: 100%;
+
+
+}
+
+div.register-container,
+div.login-container {
+  width: 400px;
+  margin: 10px auto 0px auto;
+  padding: 10px;
+}
+
+div.register-form-container h2,
+div.login-form-container h2 {
+  text-align: center;
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+
+}
+
+div.register-form-container,
+div.login-form-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 500px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 5px;
+  color: white;
+}
+
+form#register-form,
+form#login-form {
+  margin: 10px 40px;
+}
+
+form#register-form label,
+form#login-form label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+
+}
+
+form#register-form .name-cont-cont,
+.pwd-cont-cont,
+.college-roll-course-cont {
+  display: flex;
+  flex-flow: row;
+  margin: 5px;
+
+
+}
+
+.name-cont,
+.pwd-cont,
+.college-roll-cont,
+.college-course-cont {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  margin: 5px;
+
+}
+
+#login-form input {
+  width: 100%;
+}
+
+#login-form .pwd-cont {
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+#login-form .remember-me {
+  flex-direction: row;
+}
+
+div.gender-cont,
+div.year-cont {
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+
+div.age-cont,
+div.email-cont,
+div.profile-pic-cont {
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+  margin: 5px;
+}
+
+div.profile-pic-cont {
+  align-items: center;
+}
+
+div.age-cont label,
+div.age-cont input,
+div.email-cont label,
+div.email-cont input,
+div.profile-pic-cont label,
+div.profile-pic-cont input {
+  margin: 5px;
+}
+
+div.college-name-cont {
+  margin: 5px;
+  padding: 5px;
+}
+
+form#register-form input,
+form#login-form input {
+  height: 30px;
+  border: 1px solid;
+  border-radius: 2.5px;
+  padding: 5px;
+  box-shadow: 0px, 1.5px, 1px, 3px;
+}
+
+#login-form .remember-me {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+#login-form .remember-me input {
+  width: fit-content;
+  margin: 0px 5px;
+
+}
+
+input.submit {
+  width: 200px;
+  padding: 6px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  border-radius: 3.5px;
+  background-color: orangered;
+  background: linear-gradient(to bottom, orange, #ff8c00);
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+input.submit:hover {
+  background: linear-gradient(to bottom, orangered, #ff8c00);
+} */
+
+
+
+
+.sign-dwn-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px 0px 0px;
+  /* background: linear-gradient(to bottom, orange, #ff8c00); */
+
+
+
+}
+
+.sign-dwn-btns button {
+  background: transparent;
+  border: none;
+  margin: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.sign-dwn-btns button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+
+
+
+section#register-container-parent,
+section#login-container-parent {
+  background: url(https://images.shiksha.com/mediadata/images/1610359750phpwockaj.png);
+  background-color: rgb(255, 218, 150);
+  background-size: 100%;
+  /* display: none; */
+
+}
+
+div.register-container,
+div.login-container {
+  width: 400px;
+  margin: 10px auto 0px auto;
+  padding: 10px;
+}
+
+div.register-form-container h2,
+div.login-form-container h2 {
+  text-align: center;
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+
+}
+
+div.register-form-container,
+div.login-form-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 500px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 5px;
+  color: white;
+}
+
+form#register-form,
+form#login-form {
+  margin: 10px 40px;
+}
+
+form#register-form label,
+form#login-form label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  /* font-style: italic; */
+
+}
+
+form#register-form .name-cont-cont,
+.pwd-cont-cont,
+.college-roll-course-cont {
+  display: flex;
+  flex-flow: row;
+  margin: 5px;
+
+
+}
+
+.name-cont,
+.pwd-cont,
+.college-roll-cont,
+.college-course-cont {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  margin: 5px;
+
+}
+
+#login-form input {
+  width: 100%;
+}
+
+#login-form .pwd-cont {
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+#login-form .remember-me {
+  flex-direction: row;
+}
+
+div.gender-cont,
+div.year-cont {
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+
+div.age-cont,
+div.email-cont,
+div.profile-pic-cont {
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+  margin: 5px;
+}
+
+div.profile-pic-cont {
+  align-items: center;
+}
+
+div.age-cont label,
+div.age-cont input,
+div.email-cont label,
+div.email-cont input,
+div.profile-pic-cont label,
+div.profile-pic-cont input {
+  margin: 5px;
+}
+
+div.college-name-cont {
+  margin: 5px;
+  padding: 5px;
+}
+
+form#register-form input,
+form#login-form input {
+  height: 30px;
+  border: 1px solid;
+  border-radius: 2.5px;
+  padding: 5px;
+  box-shadow: 0px, 1.5px, 1px, 3px;
+}
+
+#login-form .remember-me {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+#login-form .remember-me input {
+  width: fit-content;
+  margin: 0px 5px;
+
+}
+
+input.submit {
+  width: 200px;
+  padding: 6px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  border-radius: 3.5px;
+  background-color: orangered;
+  background: linear-gradient(to bottom, orange, #ff8c00);
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+input.submit:hover {
+  background: linear-gradient(to bottom, orangered, #ff8c00);
+}
+
+
+@media (max-width: 767px) {
+
+
+  /* form sign in */
+
+  div.register-container,
+  div.register-form-container,
+  div.login-container,
+  div.login-form-container {
+    width: 100%;
+  }
+
+  form#register-form .name-cont-cont,
+  .pwd-cont-cont,
+  .college-roll-course-cont,
+  .name-cont-cont .name-cont,
+  .pwd-cont-cont .pwd-cont,
+  .college-roll-cont,
+  .college-course-cont,
+  div.gender-cont,
+  div.email-cont,
+  div.profile-pic-cont {
+    display: block;
+    width: 100%;
+
+  }
+
+  form#register-form input,
+  form#login-form input {
+    height: auto;
+    margin: 5px;
+  }
+
+  i.fa-user {
+    display: none;
+  }
+
+  .featured_items .card-container {
+    flex-direction: row;
+  }
+
+  
+}
