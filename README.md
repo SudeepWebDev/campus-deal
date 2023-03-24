@@ -18,4 +18,9 @@ Our website offers a one-stop-shop for students and professionals, saving them t
 ## Installation
 - Clone this repository
 - Install dependencies using **npm install**
+- #### For database
+   - Open **xampp**
+   - Import the file named **node_project.sql**
+   - Start the **Apache** & **MySql**
+   
 - Run the server using **npm start**
