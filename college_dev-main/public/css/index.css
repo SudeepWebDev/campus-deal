@@ -363,6 +363,18 @@ footer p {
   transition: all 0.3s ease;
 }
 
+textarea {
+  width: 100%;
+  overflow-y: auto;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: justify;
+}
+
 
 
 /* all page newsletter style */
@@ -534,8 +546,8 @@ form.newsletter-form input[type="email"] {
   font-size: 16px;
 }
 
-select,option
- {
+select,
+option {
   display: block;
   width: 100%;
   padding: 10px;
@@ -545,6 +557,7 @@ select,option
   background-color: #e1e1e1;
   font-size: 16px;
 }
+
 /* styles for mobile devices */
 @media (max-width: 767px) {
 
@@ -760,5 +773,3 @@ select,option
 .bi {
   font-size: 20px;
 } */
-
-
