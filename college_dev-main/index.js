@@ -325,6 +325,69 @@ app.post('/adminaddproducts', (req, res) => {
         res.redirect('/admin');
     }
 })
+app.post('/sendnewsletter', (req, res) => {
+    if (!req.session.user) {
+        res.redirect('/login?login=first')
+    } else {
+        var subject = req.body.subject;
+        var description = req.body.description;
+        var query = "INSERT INTO newslettermessage(subject,description) VALUES('" + subject + "','" + description + "')";
+        conn.query(query, (err, newslettermessageresult) => {
+            if (err) throw err;
+
+            // send email to subscribers
+            var transporter = nodemailer.createTransport({
+                host: "smtp.office365.com",
+                port: 587,
+                secure: false,
+                auth: {
+                    user: "sudeepkumarsingh2003@outlook.com",
+                    pass: "government@1822"
+                }
+            });
+            
+            var emailQuery = "SELECT email FROM newsletter";
+            conn.query(emailQuery, (err, emailResult) => {
+                if (err) throw err;
+                console.log(emailResult);
+                
+                // send email to each subscriber with a delay of 2 seconds between each email
+                var emailCount = emailResult.length;
+                emailResult.forEach((emailObj, index) => {
+                    setTimeout(() => {
+                        sendEmail(transporter, subject, description, emailObj.email, emailCount);
+                    }, index * 2000); // send each email with a delay of 2 seconds
+                });
+            });
+        });
+        res.redirect('/admin');
+    }
+});
+
+function sendEmail(transporter, subject, description, to, emailCount) {
+    var mailOptions = {
+        from: '"Campus Deal ADMIN" <sudeepkumarsingh2003@outlook.com>',
+        to: to,
+        subject: subject,
+        text: description,
+        html: description
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        emailCount--;
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        }
+
+        if (emailCount == 0) {
+            conn.end(); // close database connection
+        }
+    });
+}
+
+
 
 
 app.get('/login', (req, res) => {
@@ -351,6 +414,9 @@ app.get('/register', (req, res) => {
     res.render('pages/register');
 })
 app.get('/adminaddproducts', (req, res) => {
+    res.render('pages/admin');
+})
+app.get('/sendnewsletter', (req, res) => {
     res.render('pages/admin');
 })
 
@@ -485,13 +551,19 @@ app.get('/admin', requireAuth, (req, res) => {
                 if (err) reject(err);
                 resolve(userresult);
             });
+        }),
+        new Promise((resolve, reject) => {
+            conn.query("SELECT * FROM newslettermessage", (err, newslettermessageresult) => {
+                if (err) reject(err);
+                resolve(newslettermessageresult);
+            });
         })
-    ]).then(([adminresult, userresult]) => {
+    ]).then(([adminresult, userresult,newslettermessageresult]) => {
         const user = req.session.user;
         if (!user) {
             return res.redirect('/login?login=first');
         }
-        res.render('pages/admin', { adminresult: adminresult, userresult: userresult, user: user });
+        res.render('pages/admin', { adminresult: adminresult, userresult: userresult, newslettermessageresult:newslettermessageresult,user: user });
     }).catch((err) => {
         console.error(err);
         res.status(500).send('Internal Server Error');
