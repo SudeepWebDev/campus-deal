@@ -106,7 +106,7 @@
                             <div class="user-message-container">
                                 <div class="message msg-user">
                                     <p class="sender user">
-                                        <%= msg.name %>
+                                        <%= msg.name %>: <%= msg.rollno %>
                                     </p>
                                     <p class="content user">
                                         <%= msg.text %>
@@ -114,9 +114,9 @@
                                     <p class="content user time">
                                         <%= msg.time %>
                                     </p>
-                                    <p class="content user roll">
+                                    <!-- <p class="content user roll">
                                         <%= msg.rollno %>
-                                    </p>
+                                    </p> -->
                                 </div>
                             </div>
                             <% }) %>
@@ -151,7 +151,40 @@
                 <button type="submit" name="Submit" class="submit btn" style="font-size: 12px;">Add Product</button>
             </form>
         </section>
+        <hr color="orange">
 
+
+        <section class="send_newsletter">
+            <h3 style="text-align: center;">Send Newsletter</h3>
+            <form action="/sendnewsletter" method="post">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="body">Compose Your Message:</label>
+                <textarea name="description" id="body" rows="10"></textarea>
+                <button type="submit" name="Submit" class="submit btn" style="font-size: 12px;">Send Newsletter</button>
+            </form>
+        </section>
+        <hr color="orange">
+        <section class="send_newsletter">
+            <h3 style="text-align: center;">Sent Newsletter</h3>
+            <% let counter=1; %>
+                <% newslettermessageresult.forEach(function(msg) { %>
+                    <div class="newsletter-message ">
+                        <p class="counter">
+                            <%= counter %>
+                        </p>
+                        <p class="newsletter-subject">
+                            <%= msg.subject %>
+                        </p>
+                        <p class="newsletter-description">
+                            <%= msg.description %>
+                        </p>
+                        <!-- <p class="content admin time"><%= msg.time %></p> -->
+                    </div>
+                    <% counter++; %>
+                        <% }) %>
+
+        </section>
     </main>
 
     <footer id="site_footer">
@@ -247,12 +280,12 @@
         messageElements.forEach(function (messageElement) {
             const timeText = messageElement.querySelector('.time').textContent;
             const timestamp = Date.parse(`1 Jan 1970 ${timeText}`);
-           
-                messages.push({
-                    element: messageElement,
-                    timestamp: timestamp,
-                });
-            
+
+            messages.push({
+                element: messageElement,
+                timestamp: timestamp,
+            });
+
         });
         messages.sort(function (a, b) {
             return a.timestamp - b.timestamp;
