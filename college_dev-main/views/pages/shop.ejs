@@ -44,6 +44,18 @@
             display: flex;
             justify-content: space-around;
         }
+
+        .search-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+        @media (max-width: 767px) {
+
+            .search-container {
+                display: flex;
+            }
+        }
     </style>
 
 </head>
@@ -85,11 +97,10 @@
         </nav>
 
     </header>
-    
+
     <div class="search-container">
         <input type="text" placeholder="Search... " id="search-input">
         <button type="button" id="search-btn">Search</button>
-        
         <button type="button" id="clear-btn" style="margin:10px">Clear Filter</button>
     </div>
 
@@ -108,10 +119,10 @@
                             </h3>
                             <div class="price-category-container">
                                 <p class="card-text card-category" style="display: none;">
-                                   Category: <%= item.category %>
+                                    Category: <%= item.category %>
                                 </p>
                                 <p class="card-text card-sub-category" style="display: none;">
-                                   Sub-Category: <%= item.type %>
+                                    Sub-Category: <%= item.type %>
                                 </p>
                                 <p class="card-text">
                                     Price : ₹<%= item.price %>
@@ -234,7 +245,6 @@
 
                     if (cardTitle.indexOf(searchTerm) !== -1 || card_category.indexOf(searchTerm) !== -1 || card_sub_category.indexOf(searchTerm) !== -1) {
                         card.style.display = 'block';
-
                         clearBtn.style.display = 'none';
                     } else {
                         card.style.display = 'none';
