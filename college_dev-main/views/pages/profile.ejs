@@ -199,12 +199,13 @@
         <section class="newsletter">
             <div>
                 <h3>Subscribe to our newsletter</h3>
-                <form action="#" class="newsletter-form">
-                    <input type="email" placeholder="Enter your email...">
+                <form method="POST" action="/subscribe" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter your email...">
                     <button type="submit" class="btn">Subscribe</button>
                 </form>
             </div>
         </section>
+        
         <div class="quick-links">
             <div class="quick-links-container">
                 <a href="#">Privacy Policy</a>
