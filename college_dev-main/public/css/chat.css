@@ -1,4 +1,4 @@
-.chat-container ,.products h3{
+.chat-container , .send_newsletter h3, .products h3{
     background: linear-gradient(to bottom, #ffa600e8, #FF8C00e8);
     /* background-color: aqua; */
     border-radius: 5px;
@@ -9,6 +9,21 @@
     
 }
 
+.counter {
+    border: none ;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #ffa600e8, #FF8C00e8);
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.newsletter-message {
+    margin-top: 10px;
+}
 .message {
     background: #fff;
     border-radius: 5px;
@@ -19,7 +34,7 @@
 
 }
 
-.sender {
+.sender,.newsletter-subject {
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -36,11 +51,12 @@
     margin: 0;
 }
 
-form {
+form, .send_newsletter {
     max-width: 500px;
     margin: auto;
     margin-top: 10px;
     color: black !important;
+    text-align: justify;
    
 }
 
