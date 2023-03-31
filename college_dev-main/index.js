@@ -46,17 +46,25 @@ var upload = multer({ storage: multer.memoryStorage() })
 
 app.post('/subscribe', (req, res) => {
     var email = req.body.email;
-    conn.connect((e) => {
-        if (e) throw e;
-        var query = "INSERT INTO newsletter(email) VALUES('" + email + "')";
-        conn.query(query, (err, result) => {
-            if (err) throw err;
-            res.send("you are subscribed to our news letter" + result.insertId);
-        })
+    // conn.connect((e) => {
+    //     if (e) throw e;
+    //     var query = "INSERT INTO newsletter(email) VALUES('" + email + "')";
+    //     conn.query(query, (err, result) => {
+    //         if (err) throw err;
+    //         res.send("you are subscribed to our news letter" + result.insertId);
+    //     })
+    // })
+    // var name = req.body.name;
+    // var email = req.body.email;
+    // var rollno = req.body.rollno;
+    // var text = req.body.text;
+    // var time = req.body.time;
+    var query = "INSERT INTO newsletter(email) VALUES('" + email + "')";
+    conn.query(query, (err, result) => {
+        if (err) throw err;
     })
-
+    res.redirect('/');
 })
-
 app.post("/register", async (req, res) => {
     var email = req.body.email;
     var college = req.body.clg;
@@ -345,12 +353,12 @@ app.post('/sendnewsletter', (req, res) => {
                     pass: "government@1822"
                 }
             });
-            
+
             var emailQuery = "SELECT email FROM newsletter";
             conn.query(emailQuery, (err, emailResult) => {
                 if (err) throw err;
                 console.log(emailResult);
-                
+
                 // send email to each subscriber with a delay of 2 seconds between each email
                 var emailCount = emailResult.length;
                 emailResult.forEach((emailObj, index) => {
@@ -415,6 +423,9 @@ app.get('/register', (req, res) => {
 })
 app.get('/adminaddproducts', (req, res) => {
     res.render('pages/admin');
+})
+app.get('/subscribe', (req, res) => {
+    res.render('pages/profile');
 })
 app.get('/sendnewsletter', (req, res) => {
     res.render('pages/admin');
@@ -558,12 +569,12 @@ app.get('/admin', requireAuth, (req, res) => {
                 resolve(newslettermessageresult);
             });
         })
-    ]).then(([adminresult, userresult,newslettermessageresult]) => {
+    ]).then(([adminresult, userresult, newslettermessageresult]) => {
         const user = req.session.user;
         if (!user) {
             return res.redirect('/login?login=first');
         }
-        res.render('pages/admin', { adminresult: adminresult, userresult: userresult, newslettermessageresult:newslettermessageresult,user: user });
+        res.render('pages/admin', { adminresult: adminresult, userresult: userresult, newslettermessageresult: newslettermessageresult, user: user });
     }).catch((err) => {
         console.error(err);
         res.status(500).send('Internal Server Error');
