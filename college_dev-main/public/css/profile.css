@@ -1,4 +1,9 @@
 /* Profile section styles */
+* {
+  color: black;
+}
+
+
 .profile-section {
   /* background-color: #9de2ff; */
   /* background: linear-gradient(90deg, #ffbf6a, #ffaa69); */
