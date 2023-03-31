@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Deal - The ultimate college marketplace</title>
+
+    <meta name="description"
+        content="Campus Deal is an online marketplace for college students to buy and sell goods and services. Find great deals on textbooks, electronics, and dorm room essentials.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="./css/dark.css">
+    <script src="https://kit.fontawesome.com/80908bc01a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <style>
+        .msg-user {
+
+            position: relative;
+            border-top-left-radius: 20px;
+        }
+
+        .msg-admin {
+            border-top-right-radius: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- logo, navigation menu, and introductory content-->
+        <div class="accessiblity_logo_cont">
+            <!-- <span></span> -->
+            <span id="menu_bar">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </span>
+            <div class="logo">Campus Deal</div>
+            <span id="accessibility" title="accessibility"><i class="fa fa-universal-access fa-2x"
+                    style="float: right;  padding: 10px;" aria-hidden="true"></i>
+                <ul class="accessibility_menu">
+                    <li><a href="#"><i class="fa fa-moon-o btn" title="dark theme" id="theme-toggle"
+                                aria-hidden="true"></i></a></li>
+                    <li>
+                        <div id="google_translate_element" style="padding: 10px;"></div>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart" class="cart-icon"><a href="/cart"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i>
+                        <!-- <span class="cart-count">0</span> -->
+                    </a></li>
+                <li class="navbar-signin"><a href="/login">Sign In / Sign Up</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="user-chat">
+            <div class="chat-container">
+                <div id="chat-messages">
+                    <% adminresult.forEach(function(msg) { %>
+                        <% if (msg.sendtouser==user.college_roll_no) { %>
+                            <div class="message msg-admin">
+                                <p class="sender admin">Admin</p>
+                                <p class="content admin">
+                                    <%= msg.text %>
+                                </p>
+                                <p class="content admin time">
+                                    <%= msg.time %>
+                                </p>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                                    <% userresult.forEach(function(msg) { %>
+                                        <% if (msg.rollno==user.college_roll_no) { %>
+                                            <div class="message msg-user">
+                                                <p class="sender user">
+                                                    <%= msg.name %>
+                                                </p>
+                                                <p class="content user">
+                                                    <%= msg.text %>
+                                                </p>
+                                                <p class="content user time">
+                                                    <%= msg.time %>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                                                <% }) %>
+                </div>
+            </div>
+
+            <form action="/userchat" method="post" id="message-form">
+                <input type="hidden" id="name-input" name="name">
+                <input type="hidden" id="email-input" name="email">
+                <input type="hidden" id="phno-input" name="rollno">
+                <input type="hidden" id="time-input" name="time" required>
+
+                <input type="text" id="message-input" placeholder="Type a message..." name="text" required>
+                <button type="submit" name="Submit" class="submit btn">Send</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="site_footer">
+        <!-- copyright information, links to social media profiles, and other information-->
+
+        <div class="logo">Campus Deal</div>
+        <div class="main_menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                <li class="navbar-signin"><a href="#">Sign In / Sign Up</a></li>
+            </ul>
+        </div>
+
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <div class="social-media-container">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f" style="color: #1877f2;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter" style="color: rgb(29, 155, 240);"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram" style="color: magenta;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube" style="color: red;"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-details">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt" style="color: green;"></i> Phone: 123-456-7890</li>
+                    <li><i class="fas fa-envelope" style="color: red;"></i> Email: info@Campus Deal.com</li>
+                </ul>
+            </div>
+        </div>
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <section class="newsletter">
+            <div>
+                <h3>Subscribe to our newsletter</h3>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email...">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <div class="quick-links">
+            <div class="quick-links-container">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+                <a href="#">FAQ</a>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2023 Campus Deal. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="./js/index.js"></script>
+    <!-- <script src="./js/blog.js"></script> -->
+    <script>
+        const menu_bar = document.getElementById('menu_bar');
+        function toggleMenu() {
+            const main_menu = document.querySelector('.main_menu');
+            if (main_menu.style.display === 'block') {
+                main_menu.style.display = 'none';
+            } else {
+                main_menu.style.display = 'block';
+            }
+        }
+        menu_bar.addEventListener('click', toggleMenu);
+
+        // get values from local storage
+        const profile_email = localStorage.getItem('profile_email').trim();
+        const profile_rollno = localStorage.getItem('profile_rollno').trim();
+        const profile_name = localStorage.getItem('profile_name').trim();
+        function updateTime() {
+            const now = new Date();
+            const currentTime = now.toLocaleTimeString();
+            document.getElementById('time-input').value = currentTime;
+        }
+        setInterval(updateTime, 1000);
+
+        // set values to hidden input fields
+        document.getElementById('email-input').value = profile_email;
+        document.getElementById('name-input').value = profile_name;
+        document.getElementById('phno-input').value = profile_rollno;
+
+        // sorting the message
+        const messageElements = document.querySelectorAll('.message');
+        const messages = [];
+        messageElements.forEach(function (messageElement) {
+            const timeText = messageElement.querySelector('.time').textContent;
+            const timestamp = Date.parse(`1 Jan 1970 ${timeText}`);
+            messages.push({
+                element: messageElement,
+                timestamp: timestamp
+            });
+        });
+        messages.sort(function (a, b) {
+            return a.timestamp - b.timestamp;
+        });
+        const chatContainer = document.querySelector('.chat-container');
+        chatContainer.innerHTML = '';
+        messages.forEach(function (message) {
+
+            chatContainer.appendChild(message.element);
+        });
+
+        // positioning to the extreme right
+        const chat_container = document.querySelector(".chat-container");
+        const width = chat_container.offsetWidth;
+
+        const msg_user_elements = document.querySelectorAll(".msg-user");
+        msg_user_elements.forEach(function (element) {
+            element.style.right = `-${width - element.offsetWidth - 20}px`;
+        });
+
+
+
+
+
+    </script>
+    <script src="./js/dark.js"></script>
+</body>
+
+</html>

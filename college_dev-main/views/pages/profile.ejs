@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Deal - The ultimate college marketplace</title>
+
+    <meta name="description"
+        content="Campus Deal is an online marketplace for college students to buy and sell goods and services. Find great deals on textbooks, electronics, and dorm room essentials.">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/dark.css">
+    <script src="https://kit.fontawesome.com/80908bc01a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <!-- logo, navigation menu, and introductory content-->
+        <div class="accessiblity_logo_cont">
+            <!-- <span></span> -->
+            <span id="menu_bar">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </span>
+            <div class="logo">Campus Deal</div>
+            <span id="accessibility" title="accessibility"><i class="fa fa-universal-access fa-2x"
+                    style="float: right;  padding: 10px;" aria-hidden="true"></i>
+                <ul class="accessibility_menu">
+                    <li><a href="#"><i class="fa fa-moon-o btn" title="dark theme" id="theme-toggle"
+                                aria-hidden="true"></i></a></li>
+                    <li>
+                        <div id="google_translate_element" style="padding: 10px;"></div>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart" class="cart-icon"><a href="/cart"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i>
+                        <!-- <span class="cart-count">0</span> -->
+                    </a></li>
+                <li class="navbar-signin"><a href="/login">Sign In / Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h1 class="profile-title">Welcome <%= user.first_name%>
+                        <%= user.last_name%>
+                </h1>
+            </div>
+            <div class="profile-card">
+                <div class="profile-img">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                        alt="Profile Image">
+                </div>
+                <div class="profile-details">
+                    <h2 class="profile-name">
+                        <%= user.first_name%>
+                            <%= user.last_name%>
+                    </h2>
+                    <p class="profile-occupation">Student</p>
+                    <div class="profile-info">
+                        <div class="profile-info-item">
+                            <p class="profile-info-label">Roll no</p>
+                            <p class="profile-info-value rollno">
+                                <%= user.college_roll_no%>
+                            </p>
+                        </div>
+                        <div class="profile-info-item">
+                            <p class="profile-info-label">College</p>
+                            <p class="profile-info-value">
+                                <%= user.College%>
+                            </p>
+                        </div>
+                        <div class="profile-info-item">
+                            <p class="profile-info-label">Email</p>
+                            <p class="profile-info-value email">
+                                <%= user.Email%>
+                            </p>
+                        </div>
+                        <div class="profile-info-item">
+                            <p class="profile-info-label">Contact No.</p>
+                            <p class="profile-info-value phno">
+                                <%= user.phno%>
+                                <!-- <%= admindata.rollno%> -->
+                                <!-- <%= user.phno%> -->
+                            </p>
+                        </div>
+                        <div class="profile-info-item">
+                            <p class="profile-info-label">Rating</p>
+                            <p class="profile-info-value">8.5</p>
+                        </div>
+                    </div>
+                    <div class="profile-buttons">
+                        <a href="/" class="btn profile-btn profile-home-btn">Home</a>
+                        <a href="/blogs" class="btn profile-btn profile-blog-btn">Blog</a>
+                        <a href="/userchat" class="btn profile-btn profile-blog-btn" id="chat">Chat</a>
+                        <a href='/logout' class="btn" id="logout" onclick="logout()">Log Out</a>
+                        <script>
+                            // console.log(`<%= admindata.rollno%>`)
+                            // console.log(`<%= user.college_roll_no%>`)
+                            if (`<%= user.college_roll_no%>`.trim() == `28021`.trim()) {
+                                var chatLink = document.getElementById('chat');
+                                chatLink.href = "/admin";
+
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <form action="/sell" method="POST">
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" name="product-name" required>
+    
+        <label for="product-description">Product Description:</label>
+        <textarea id="product-description" name="product-description" required></textarea>
+    
+        <label for="product-price">Product Price:</label>
+        <input type="number" id="product-price" name="product-price" required>
+    
+        <label for="product-image">Product Image:</label>
+        <input type="file" id="product-image" name="product-image" required>
+    
+        <button type="submit">Sell</button>
+    </form> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <footer id="site_footer">
+        <!-- copyright information, links to social media profiles, and other information-->
+
+        <div class="logo">Campus Deal</div>
+        <div class="main_menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                <!-- <li class="navbar-signin active"><a href="/login">Sign In / Sign Up</a></li> -->
+            </ul>
+        </div>
+
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <div class="social-media-container">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f" style="color: #1877f2;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter" style="color: rgb(29, 155, 240);"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram" style="color: magenta;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube" style="color: red;"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-details">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt" style="color: green;"></i> Phone: 123-456-7890</li>
+                    <li><i class="fas fa-envelope" style="color: red;"></i> Email: info@Campus Deal.com</li>
+                </ul>
+            </div>
+        </div>
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <section class="newsletter">
+            <div>
+                <h3>Subscribe to our newsletter</h3>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email...">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <div class="quick-links">
+            <div class="quick-links-container">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+                <a href="#">FAQ</a>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2023 Campus Deal. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+    <script>
+        const menu_bar = document.getElementById('menu_bar');
+        function toggleMenu() {
+            const main_menu = document.querySelector('.main_menu');
+            if (main_menu.style.display === 'block') {
+                main_menu.style.display = 'none';
+            } else {
+                main_menu.style.display = 'block';
+            }
+        }
+        menu_bar.addEventListener('click', toggleMenu);
+
+        // profile name
+        var profile_name = document.querySelector('h2.profile-name').textContent;
+        var profile_email = document.querySelector('.profile-info-item .email').textContent;
+        var profile_rollno = document.querySelector('.profile-info-item .rollno').textContent;
+        localStorage.setItem('profile_name', profile_name);
+        localStorage.setItem('profile_email', profile_email);
+        localStorage.setItem('profile_rollno', profile_rollno);
+
+        // log out
+        function logout() {
+            localStorage.removeItem('profile_name');
+            localStorage.removeItem('profile_email');
+            localStorage.removeItem('profile_rollno');
+            localStorage.clear();
+            window.location.reload();
+            // window.location.href = '/';
+        }
+    </script>
+    <script src="./js/index.js"></script>
+    <script src="./js/about.js"></script>
+    <script src="./js/dark.js"></script>
+</body>
+
+</html>

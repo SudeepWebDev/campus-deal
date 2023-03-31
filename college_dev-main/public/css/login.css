@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+section {
+  padding: 10px;
+}
+
+/* Register Form Styles */
+.register-container,
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  /* background-color: #fff; */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #ffab40, #ff6d00);
+  border-image-slice: 1;
+  /* border-radius: 15px; */
+}
+
+.register-form-container,
+.login-form-container {
+  text-align: center;
+
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="submit"],
+input[type="radio"],
+input[type="url"],
+input[type="tel"],
+select,option
+ {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e1e1e1;
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.submit,
+input[type="submit"] {
+  background-color: transparent;
+  /* color: #fff; */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 20px;
+  border: none;
+  padding: 10px 20px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.submit:hover,
+input[type="submit"]:hover {
+  background-color: #fff;
+  /* color: #ff6d00; */
+  /* Additional styles as needed, such as a box-shadow or border-radius */
+}
+
+
+
+.sign-dwn-btns {
+  margin-top: 20px;
+}
+
+.show-sign-in-btn,
+#show-sign-up-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.show-sign-in-btn:hover,
+#show-sign-up-btn:hover {
+  color: #0062cc;
+}
+
+.remember-me {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.remember-me #remember-me {
+
+  margin: 10px;
+}

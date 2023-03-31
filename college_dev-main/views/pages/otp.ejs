@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>OTP Verification - Campus-Deal</title>
+	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/login.css">
+	<style>
+		form {
+			width: fit-content;
+			margin: 5px auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			background-color: #f8f8f8;
+			box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.2);
+			border: 2px solid;
+			border-image: linear-gradient(90deg, #ffab40, #ff6d00);
+			border-image-slice: 1;
+		}
+	</style>
+</head>
+
+<body>
+
+	<form method="post" action="/otp">
+		<h3>OTP Verification</h3>
+		<hr color="orange" width="100%">
+		<label for="otp">Enter OTP:</label>
+		<input type="text" id="otp" name="otp" required>
+		<input type="hidden" id="email" name="email" value="${req.body.email}">
+		<button type="submit" class="btn">Verify</button>
+	</form>
+</body>
+
+</html>

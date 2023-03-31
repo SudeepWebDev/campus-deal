@@ -1,0 +1,69 @@
+.chat-container ,.products h3{
+    background: linear-gradient(to bottom, #ffa600e8, #FF8C00e8);
+    /* background-color: aqua; */
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 500px;
+    margin: auto;
+    color: black !important;
+    
+}
+
+.message {
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 75%;
+
+}
+
+.sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#message-form {
+    padding: 10px ;
+    background-color: #fff;
+    position: sticky;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    width: calc(100%+20px);
+}
+.content {
+    margin: 0;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    color: black !important;
+   
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    /* width: 75%; */
+}
+
+button {
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    /* margin-left: 5px; */
+    cursor: pointer;
+}
+
+.message .content.user.time,
+.message .content.admin.time {
+    font-size: 12px;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}

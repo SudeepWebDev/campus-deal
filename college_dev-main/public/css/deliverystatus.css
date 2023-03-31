@@ -1,0 +1,113 @@
+.btn {
+    padding: 5px;
+    margin: 5px;
+    width: fit-content;
+    /* background: linear-gradient(90deg, #72c867, #008309); */
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 24px; */
+    font-weight: bold;
+    color: white;
+}
+
+/* .timer {
+        width: 200px;
+        height: 50px;
+        background: linear-gradient(90deg, #ffab40, #ff6d00);
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    } */
+
+.delivery-status-cont {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(90deg, #ffab40, #ff6d00);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.delivery-status-cont h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.delivery-status-cont p {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.date,
+.tracking-number,
+.address,
+.status {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.status {
+    border: 2px solid linear-gradient(90deg, #ffab40, #ff6d00);
+    background-color: white;
+    color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.status-icon {
+    font-size: 24px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.delivered .status-icon {
+    background-color: #00c853;
+}
+
+.packed .status-icon {
+    background-color: #ffc107;
+}
+
+.on-the-way .status-icon {
+    background-color: #2196f3;
+}
+
+.status-label {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 767px) {}

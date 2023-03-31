@@ -1,0 +1,282 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Deal - The ultimate college marketplace</title>
+
+    <meta name="description"
+        content="Campus Deal is an online marketplace for college students to buy and sell goods and services. Find great deals on textbooks, electronics, and dorm room essentials.">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/dark.css">
+    <script src="https://kit.fontawesome.com/80908bc01a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <style>
+        .card-img {
+            height: 134px;
+            width: 134px;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: orangered;
+            cursor: pointer;
+
+        }
+
+        .slideshow-container:hover {
+            z-index: 100;
+            transform: scale(1.2);
+
+        }
+
+        .add-to-cart-btn {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 767px) {
+            .slideshow-container:hover {
+                z-index: 1;
+                transform: scale(1);
+
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- logo, navigation menu, and introductory content-->
+        <div class="accessiblity_logo_cont">
+            <!-- <span></span> -->
+            <span id="menu_bar">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </span>
+            <div class="logo">Campus Deal</div>
+            <span id="accessibility" title="accessibility"><i class="fa fa-universal-access fa-2x"
+                    style="float: right;  padding: 10px;" aria-hidden="true"></i>
+                <ul class="accessibility_menu">
+                    <li><a href="#"><i class="fa fa-moon-o btn" title="dark theme" id="theme-toggle"
+                                aria-hidden="true"></i></a></li>
+                    <li>
+                        <div id="google_translate_element" style="padding: 10px;"></div>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <nav class="main_menu">
+            <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart" class="cart-icon"><a href="/cart"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i>
+                        <!-- <span class="cart-count">0</span> -->
+                    </a></li>
+                <li class="navbar-signin"><a href="/login">Sign In / Sign Up</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="slideshow-container card">
+        <div class="mySlides">
+            <img src="./images/slide/1.png" alt="Slide 1">
+            <div class="caption">Campus Deal</div>
+        </div>
+
+        <div class="mySlides">
+            <img src="./images/slide/2.png" alt="Slide 2">
+            <div class="caption">Features</div>
+        </div>
+        <div class="mySlides">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy"
+                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFduNgEL1Y&#x2F;view?embed"
+                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+            <div class="caption"><a
+                    href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFduNgEL1Y&#x2F;view?utm_content=DAFduNgEL1Y&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                    target="_blank" rel="noopener">Campus Deal</a> by Tech Titans</div>
+
+        </div>
+
+        <!-- <div class="mySlides">
+            <img src="images/3.png" alt="Slide 3">
+            <div class="caption">Caption text for slide 3</div>
+        </div> -->
+
+        <!-- Previous and next buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+    <main>
+        <section class="featured_items ">
+            <!--  featured products or listings-->
+
+            <h2>Featured Items</h2>
+            <div class="card-container">
+                <% result.forEach(function(item) { %>
+                    <div class="card">
+                        <img src="<%= item.image %>" alt="Space" class="card-img">
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                <%= item.Name %>
+                            </h3>
+                            <p class="card-text">
+                                price : ₹<%= item.price %>
+                            </p>
+                            <form action="/add_to_cart" method="post">
+                                <input type="hidden" name="id" value="<%= item.id %>">
+                                <input type="hidden" name="name" value="<%= item.Name %>">
+                                <input type="hidden" name="price" value="<%= item.price %>">
+                                <input type="hidden" name="quantity" value="1">
+                                <input type="hidden" name="image" value="<%= item.image %>">
+                                <hr color="orange">
+                                <input class="btn add-to-cart-btn" type="submit" value="Add to Cart"
+                                    onclick="addToCart(this)">
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <% }) %>
+
+            </div>
+        </section>
+        <!-- <section class="textbook_listings">
+            textbook listings
+            <h2>Textbooks</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/demo.png" alt="Textbook 1">
+                        <h3 class="card-title">Textbook 1</h3>
+                        <p class="text-author">Author: Sudeep</p>
+                        <p>ISBN: 123456789</p>
+                        <p>Condition: divke New</p>
+                        <p>Price: $12</p>
+                        <a href="#" class="btn  add-to-cart-btn">Add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+        </section> -->
+
+
+    </main>
+    <div><button class="btn"><a href="/trade">See More</a></button></div>
+
+
+    <aside class="sidebar">
+        <!-- related content-->
+        <h2>Related Content</h2>
+        <ul>
+            <li><a href="#">10 Tips for a Successful College Experience</a></li>
+            <li><a href="#">The Best Places to Eat on Campus</a></li>
+            <li><a href="#">How to Find a Part-Time Job on Campus</a></li>
+            <li><a href="#">Making the Most of Your College Dorm Room</a></li>
+        </ul>
+    </aside>
+
+
+    <footer id="site_footer">
+        <!-- copyright information, links to social media profiles, and other information-->
+
+        <div class="logo">Campus Deal</div>
+        <div class="main_menu">
+            <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/trade">Buy/Sell</a></li>
+                <li><a href="/blogs">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li title="your cart"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                <li class="navbar-signin"><a href="#">Sign In / Sign Up</a></li>
+            </ul>
+        </div>
+
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <div class="social-media-container">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f" style="color: #1877f2;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter" style="color: rgb(29, 155, 240);"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram" style="color: magenta;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube" style="color: red;"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-details">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt" style="color: green;"></i> Phone: 123-456-7890</li>
+                    <li><i class="fas fa-envelope" style="color: red;"></i> Email: info@College-Campus.com</li>
+                </ul>
+            </div>
+        </div>
+        <hr width: 100% color="orangered" style="margin: 10px 0px 10px 0px;">
+        <section class="newsletter">
+            <div>
+                <h3>Subscribe to our newsletter</h3>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email...">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <div class="quick-links">
+            <div class="quick-links-container">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+                <a href="#">FAQ</a>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2023 College-Campus. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+    <!-- <a href="#" class="back-to-top"><i class="bi bi-arrow-up-short"></i></a> -->
+    <script src="./js/index.js"></script>
+
+
+    <script>
+        const menu_bar = document.getElementById('menu_bar');
+        function toggleMenu() {
+            const main_menu = document.querySelector('.main_menu');
+            if (main_menu.style.display === 'block') {
+                main_menu.style.display = 'none';
+            } else {
+                main_menu.style.display = 'block';
+            }
+        }
+        menu_bar.addEventListener('click', toggleMenu);
+        function addToCart(button) {
+            button.value = "Added";
+            button.style.backgroundColor = 'green'
+        }
+    </script>
+    <script src="/js/dark.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+/* dark theme css */
+.dark-mode {
+    background-color: rgb(21,32,43);
+    /* background-color: #333; */
+    color: #fff;
+    border-image:none !important;
+}
+
+.dark-mode-item {
+    background-color: #38444d;
+    /* background-color: #555; */
+    color: #fff;
+    border-image:none !important;
+}
+.gradient-dark-mode {
+    background-color: #38444d;
+    background: linear-gradient(to bottom,#233441, #222f3e);
+    color: #fff;
+    border-image:none !important;
+}
+.alight-dark-mode {
+    background-color: #13232ebe;
+    color: #fff !important;
+    border-image:none;
+}
+
+
+.color {
+    color: black;
+}
