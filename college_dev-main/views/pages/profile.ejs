@@ -87,6 +87,12 @@
                             </p>
                         </div>
                         <div class="profile-info-item">
+                            <p class="profile-info-label">Course</p>
+                            <p class="profile-info-value rollno">
+                                <%= user.Course%>
+                            </p>
+                        </div>
+                        <div class="profile-info-item">
                             <p class="profile-info-label">College</p>
                             <p class="profile-info-value">
                                 <%= user.College%>
@@ -109,6 +115,10 @@
                         <div class="profile-info-item">
                             <p class="profile-info-label">Rating</p>
                             <p class="profile-info-value">8.5</p>
+                        </div>
+                        <div class="profile-info-item">
+                            <p class="profile-info-label">Address</p>
+                            <p class="profile-info-value"><%= user.address%></p>
                         </div>
                     </div>
                     <div class="profile-buttons">
